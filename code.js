@@ -38,8 +38,8 @@ function tsp_ls(distance_matrix) {
         let improved = false;
         
         // make i and k random but different from last iteration
-        let i = Math.floor(Math.random() * (n-1));
-        let k = i + 1 + Math.floor(Math.random() * (n-i-1));
+        let i = Math.floor(Math.random() * (n-1)); // randomly choose i to be between 0 and n-2. Makes sure local minima can be escaped given sufficient attempts/iterations
+        let k = i + 1 + Math.floor(Math.random() * (n-i-1)); // randomly choose k to be between i+1 and n-1. Makes sure k is always greater than i
         
         let newRoute = twoOpt(currentRoute, i, k);
         let newDistance = getDistance(newRoute);
