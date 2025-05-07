@@ -31,8 +31,8 @@ function tsp_ls(distance_matrix) {
     let bestDistance = getDistance(currentRoute);
     let iterations = 0;
     let badCount = 0;
-    const MAX_BAD_COUNT = n * 10; // stop after n*10 iterations without improvement
-    const MAX_ITER = n * 100;    // limit on total iterations
+    const MAX_BAD_COUNT = n * 10; // stop after n*10 iterations without improvement. I used n*10 because it is unlikely that a better route isn't found in n*10 attempts
+    const MAX_ITER = n * 100;    // limit on total iterations. I used n*100 because it needs a substantially large amount of iterations for each attempt to avoid getting stuck in local minima
     
     while (iterations < MAX_ITER && badCount < MAX_BAD_COUNT) {
         let improved = false;
