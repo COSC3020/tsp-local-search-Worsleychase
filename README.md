@@ -50,3 +50,17 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+# Solution
+
+In the main loop we run up to n*100 times worst case, which is just O(n). For each iteration of the main loop we use getDistance() to sum the distances up to n, then slice and reverse which is O(n+n+n) = O(n). Creating the initial route takes linear time as well. That means we get $O(n + n\cdot n)$. Therefore our worst runtime complexity is:
+
+$$ \Theta (n^2) $$
+
+The only data we store is the current route and the new route, both are just size n. This means our worst-case memory complexity is:
+
+$$ \Theta (n) $$
+
+# Disclaimer
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
